@@ -12,7 +12,7 @@ const ListingDetail = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/listings/${id}`)
+    axios.get(`https://stayfinder-backend-aqjy.onrender.com/api/listings/${id}`)
       .then(res => setListing(res.data))
       .catch(err => console.error(err));
   }, [id]);
@@ -21,7 +21,7 @@ const ListingDetail = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`http://localhost:5000/api/bookings`, {
+      await axios.post(`https://stayfinder-backend-aqjy.onrender.com/api/bookings`, {
         listingId: id,
         checkIn,
         checkOut

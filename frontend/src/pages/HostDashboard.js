@@ -9,7 +9,7 @@ const HostDashboard = () => {
   const fetchListings = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:5000/api/listings/my-listings', {
+      const res = await axios.get('https://stayfinder-backend-aqjy.onrender.com/api/listings/my-listings', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setListings(res.data);
@@ -23,10 +23,10 @@ const HostDashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/listings/${id}`, {
+      await axios.delete(`https://stayfinder-backend-aqjy.onrender.com/api/listings/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      fetchListings(); // refresh list
+      fetchListings(); 
     } catch (err) {
       console.error("Error deleting listing:", err);
     }

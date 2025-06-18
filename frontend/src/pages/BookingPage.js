@@ -13,7 +13,7 @@ const BookingPage = () => {
   const handleBooking = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:5000/api/bookings`, {
+      const res = await axios.post(`https://stayfinder-backend-aqjy.onrender.com/api/bookings`, {
         listingId: id,
         checkIn,
         checkOut,

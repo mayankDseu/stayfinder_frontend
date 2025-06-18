@@ -24,7 +24,7 @@ const Register = () => {
     setSuccess('');
 
     try {
-      await axios.post('http://localhost:5000/api/auth/register', formData);
+      await axios.post('https://stayfinder-backend-aqjy.onrender.com/api/auth/register', formData);
       setSuccess('Registered successfully! Redirecting to login...');
       setTimeout(() => {
         navigate('/login');

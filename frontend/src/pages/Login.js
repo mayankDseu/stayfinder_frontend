@@ -18,7 +18,7 @@ const Login = () => {
   e.preventDefault();
   setError('');
   try {
-    const res = await axios.post('http://localhost:5000/api/auth/login', formData);
+    const res = await axios.post('https://stayfinder-backend-aqjy.onrender.com/api/auth/login', formData);
 
     const { token, user } = res.data;
     const role = user.role;

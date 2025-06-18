@@ -35,7 +35,7 @@ const CreateListing = () => {
       console.log('Sending data:', formData);
 
       await axios.post(
-        'http://localhost:5000/api/listings',
+        'https://stayfinder-backend-aqjy.onrender.com/api/listings',
         formData,
         {
           headers: {

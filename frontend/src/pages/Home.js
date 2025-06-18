@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/listings');
+        const res = await axios.get('https://stayfinder-backend-aqjy.onrender.com/api/listings');
         setListings(res.data);
       } catch (err) {
         console.error("Failed to fetch listings", err);
