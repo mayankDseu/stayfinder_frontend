@@ -35,7 +35,7 @@ const Register = () => {
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ccc' }}>
+    <div style={{ maxWidth: '400px', margin: '50px auto', padding: '32px', border: '1px solid #ccc' }}>
       <h2 style={{ textAlign: 'center' }}>Register</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {success && <p style={{ color: 'green' }}>{success}</p>}

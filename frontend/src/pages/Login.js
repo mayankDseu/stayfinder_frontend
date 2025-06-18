@@ -42,7 +42,7 @@ const Login = () => {
 
 
   return (
-    <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ccc' }}>
+    <div style={{ maxWidth: '400px', margin: '50px auto', padding: '32px', border: '1px solid #ccc' }}>
       <h2 style={{ textAlign: 'center' }}>Login</h2>
       {error && <p style={{ color: 'red', fontSize: '14px' }}>{error}</p>}
       <form onSubmit={handleLogin}>
