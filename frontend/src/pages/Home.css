@@ -1,31 +1,12 @@
-
-
-.home-container {
-  padding: 24px;
-  min-height: 100vh;
-  background-color: #f9fafb;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.home-title {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .listings-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   width: 100%;
   max-width: 1080px;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
-
 .listing-card {
   background: #fff;
   border-radius: 16px;
@@ -37,6 +18,7 @@
   color: inherit;
   display: flex;
   flex-direction: column;
+  min-height: 180px;
 }
 
 .listing-card:hover {
@@ -46,7 +28,7 @@
 
 .listing-title {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-bottom: 8px;
   color: #111827;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -54,15 +36,52 @@
 
 .listing-location {
   font-size: 0.875rem;
-  color: #6b7280; 
+  color: #6b7280;
   margin-bottom: 12px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .listing-price {
-  margin-top: auto; 
+  margin-top: auto;
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   color: #2563eb;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 1.75rem;
+  }
+
+  .listing-card {
+    padding: 16px;
+  }
+
+  .listing-title {
+    font-size: 1.125rem;
+  }
+
+  .listing-price {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 1.5rem;
+  }
+
+  .listing-title {
+    font-size: 1rem;
+  }
+
+  .listing-location {
+    font-size: 0.75rem;
+  }
+
+  .listing-price {
+    font-size: 0.95rem;
+  }
 }
