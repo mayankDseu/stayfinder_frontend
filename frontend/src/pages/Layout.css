@@ -18,11 +18,13 @@ header {
 .header-container {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: 10px 9px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row; 
+    flex-wrap: nowrap; /* ⛔ Don’t wrap children */
+  overflow: hidden;  /* Optional: cut off overflow */
 }
 
 .logo-burger {
@@ -58,6 +60,13 @@ nav.nav-links {
   gap: 20px;
   align-items: center;
 }
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: nowrap; 
+}
+
 
 nav a {
   font-weight: 500;
