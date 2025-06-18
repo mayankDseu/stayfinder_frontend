@@ -53,7 +53,7 @@ const CreateListing = () => {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '40px auto', padding: '20px', border: '1px solid #ccc' }}>
+    <div style={{ maxWidth: '600px', margin: '40px auto', padding: '32px', border: '1px solid #ccc' }}>
       <h2>Create a New Listing</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSubmit}>
