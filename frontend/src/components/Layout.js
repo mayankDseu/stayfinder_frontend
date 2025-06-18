@@ -3,37 +3,37 @@ import { Link } from 'react-router-dom';
 import '../pages/Layout.css';
 
 const Layout = ({ children }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   const token = localStorage.getItem('token');
   const role = localStorage.getItem('role');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = () => {
     localStorage.clear();
     window.location.href = '/';
   };
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
     <div className="layout-wrapper">
       <header>
         <div className="header-container">
-          <Link to="/" className="logo-link">StayFinder 🏠</Link>
-
-          <button className="burger" onClick={toggleMenu}>
-            ☰
-          </button>
+          <div className="logo-burger">
+            <Link to="/" className="logo-link">StayFinder 🏠</Link>
+            <button
+              className="burger"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle navigation"
+            >
+              ☰
+            </button>
+          </div>
 
           <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
-            <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+            <Link to="/">Home</Link>
 
             {!token && (
               <>
-                <Link to="/register" onClick={() => setMenuOpen(false)}>Register</Link>
-                <Link to="/login" className="login-btn" onClick={() => setMenuOpen(false)}>Login</Link>
+                <Link to="/register">Register</Link>
+                <Link to="/login" className="login-btn">Login</Link>
               </>
             )}
 
@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
 
             {token && role === 'host' && (
               <>
-                <Link to="/create-listing" onClick={() => setMenuOpen(false)}>List Your Home</Link>
+                <Link to="/create-listing">List Your Home</Link>
                 <button onClick={handleLogout} className="logout-btn">Logout</button>
               </>
             )}
@@ -51,9 +51,7 @@ const Layout = ({ children }) => {
         </div>
       </header>
 
-      <main className="main-content">
-        {children}
-      </main>
+      <main className="main-content">{children}</main>
     </div>
   );
 };
